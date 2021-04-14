@@ -25,3 +25,4 @@ def load(path: Union[Path, PathLike, str], dpi: int = 500) -> List[Image.Image]:
         return convert_from_path(path, dpi)
     elif path.suffix in ('.jpg', '.jpeg', '.png'):
         return [Image.open(path)]
+    raise Exception(f"File does not have one of the expected suffixes (pdf, jpg, jpeg, png): {str(path)}")
